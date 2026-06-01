@@ -127,7 +127,34 @@ namespace EX_1_ChatAI_Winform
                 }
             };
 
+            AddFeatureBanner();
             LoadModels();
+        }
+
+        private void AddFeatureBanner()
+        {
+            var banner = new Panel
+            {
+                Dock     = DockStyle.Top,
+                Height   = 36,
+                BackColor = Color.FromArgb(219, 234, 254),
+                Padding  = new Padding(0)
+            };
+
+            var lbl = new Label
+            {
+                Dock      = DockStyle.Fill,
+                Text      = "✦  חדש  ·  כעת ניתן לשאול אותי מה השעה או התאריך — אענה בזמן אמת",
+                TextAlign = ContentAlignment.MiddleCenter,
+                Font      = new Font("Segoe UI", 9.5f, FontStyle.Regular),
+                ForeColor = Color.FromArgb(29, 78, 216),
+                BackColor = Color.Transparent,
+                RightToLeft = RightToLeft.Yes
+            };
+
+            banner.Controls.Add(lbl);
+            pnlChatContainer.Controls.Add(banner);
+            banner.SendToBack();
         }
 
         private async Task InitChatWebAsync()
