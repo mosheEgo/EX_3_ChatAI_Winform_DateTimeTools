@@ -1,0 +1,9 @@
+.env
+**/.env
+_build_verify/
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.rsuser
